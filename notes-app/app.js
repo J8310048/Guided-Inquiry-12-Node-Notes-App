@@ -9,7 +9,7 @@ const notes = require("./notes.js"); //Here I'm importing my file notes.js and a
 //customize yargs version
 yargs.version("1.1.0")
 
-//Create add command
+//Create add command. Command helps add a command while also giving it a name. Describe is the decription of the command. Builder let's you list the optional changes you want to make to your notes. Handler gets the values of the console you typed in with your command.
 yargs.command({
     command: "add",
     describe: "Add a new note",
