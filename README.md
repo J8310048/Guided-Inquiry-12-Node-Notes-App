@@ -22,6 +22,4 @@ For listing notes:
 
 If you type invalid entires, you will get error messages in the console.
 
-(e. g. node app.js read --title="Shopping List"
-
-Message: Note not Found!) Because the note does not exist
+(e. g. node app.js read --title="Shopping List" Message: Note not Found!) Because the note does not exist

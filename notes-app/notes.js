@@ -1,23 +1,23 @@
-//This helps us read and write onto another file
+//This helps load the npm package chalk to customize console messages with different colors
 const { default: chalk } = require("chalk")
+//This helps us read and write onto another file
 const fs = require("fs")
 
-
+//Here we're storing the loaded data within a variable nested inside our addNote function
 const addNote = function(title, body) {
-    //Here we're storing the loaded data inside a variable nested inside our addNote function
     const notes = loadNotes()
     const duplicateNote = notes.find(function (note) {
         return note.title === title
     })
 
+//We're checking to see if there are any duplicate notes created. If there are duplicate notes, a console message will display saying "Note title taken!"
     if (!duplicateNote) {
-    //We're pushing the arguments into our notes array
 notes.push({
     title: title,
     body: body
 })
 
-//We're calling our function saveNotes and storing our array in the JSON file below
+//We're calling our function saveNotes and storing our array in our  notes.json file
 saveNotes(notes)
 console.log(chalk.green.inverse("New note added"))
     } else {
@@ -29,6 +29,7 @@ console.log(chalk.green.inverse("New note added"))
 
 }
 
+//This function is for reading notes. We only need to load the title so the enire note will display on the console.
 const readNote = function (title) {
     const notes = loadNotes()
     const note = notes.find(function (note) {
@@ -43,7 +44,7 @@ const readNote = function (title) {
     }
 }
 
-//Here we're defining a function to save our notes into a JSON file
+//This function saves our notes into our notes.json file
 const saveNotes = function (notes) {
     //We turn our data into a string
     const dataJSON = JSON.stringify(notes)
@@ -66,7 +67,7 @@ const loadNotes = function () {
 
 }
 
-//This function will remove notes
+//This function will remove notes just by searching for the note title
 const removeNote = function (title) {
     const notes = loadNotes() 
         const keepNotes = notes.filter( function (note) {

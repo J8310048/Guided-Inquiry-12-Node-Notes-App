@@ -74,5 +74,4 @@ yargs.command({
 //In the notes app, users will add, remove, read, and list their notes
 
 yargs.parse();
-// console.log(yargs.argv);
 
