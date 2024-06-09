@@ -3,6 +3,8 @@ const { default: chalk } = require("chalk")
 //This helps us read and write onto another file
 const fs = require("fs")
 
+
+
 //Here we're storing the loaded data within a variable nested inside our addNote function
 const addNote = function(title, body) {
     const notes = loadNotes()
@@ -24,10 +26,9 @@ console.log(chalk.green.inverse("New note added"))
         console.log(chalk.red.inverse("Note title taken"))
     }
 
-
-
-
 }
+
+
 
 //This function is for reading notes. We only need to load the title so the enire note will display on the console.
 const readNote = function (title) {
